@@ -1,0 +1,22 @@
+# Sample field registration config.
+#
+# 'image' is the source frame to visualize against (relative to repo root or absolute).
+# 'correspondences' lists >=4 pairs:
+#   pixel: [x, y]          # pixel coords in the source image
+#   field: [x_yd, y_yd]    # field coords (yards), origin = back of left endzone
+#
+# Stick to yard-line/sideline intersections — they're the most reliable fiducials
+# and they exist in both NFL and college film at identical positions.
+#
+# Replace these with real values for your camera. The four below are placeholders.
+
+image: data/samples/example_frame.png
+correspondences:
+  - pixel: [200, 450]
+    field: [10.0, 0.0]            # left goal line meets near sideline
+  - pixel: [1700, 460]
+    field: [110.0, 0.0]           # right goal line meets near sideline
+  - pixel: [1800, 950]
+    field: [110.0, 53.333]        # right goal line meets far sideline
+  - pixel: [100, 940]
+    field: [10.0, 53.333]         # left goal line meets far sideline

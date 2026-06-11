@@ -1,0 +1,23 @@
+# Field registration for the 1932 Michigan vs Ohio State press-box film.
+# Anchor frame: data/samples/u32_05.png  (5 seconds into umich_1932_osu.mp4)
+#
+# Press-box camera angle: elevated single camera looking across the field.
+# Sidelines run roughly horizontally near top of frame (top sideline visible
+# at ~y=190); near sideline is below the visible play area.
+#
+# These four correspondences are HAND-PICKED visual estimates and the absolute
+# yard line numbers (40/60) are placeholders — no painted yard numbers are
+# legible in this 1932 footage. The homography is internally consistent for
+# this frame but will not generalize as the camera pans during the play.
+# Auto yard-line detection is the architectural fix.
+
+image: data/samples/u32_05.png
+correspondences:
+  - pixel: [200, 195]    # top sideline, left of visible action
+    field: [40.0, 0.0]
+  - pixel: [1080, 190]   # top sideline, right of visible action
+    field: [60.0, 0.0]
+  - pixel: [1180, 600]   # near-sideline-ish, right
+    field: [60.0, 53.333]
+  - pixel: [120, 610]    # near-sideline-ish, left
+    field: [40.0, 53.333]

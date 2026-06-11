@@ -1,0 +1,26 @@
+# Field registration for the 1969 Michigan vs Ohio State color film.
+# Anchor frame: data/samples/u69_30.png (30 sec into umich_1969_osu.mp4)
+#
+# THIS is the first registration anchored on real ground truth: the painted
+# yard numbers "30", "40", "50" are clearly visible on the field, and the
+# digit pairs straddle their yard lines (NCAA rules), letting us pin yard
+# lines to absolute pixel positions.
+#
+# NCAA yard-number placement: top of digits is 9 yd from near sideline, digits
+# are 6 ft (2 yd) tall, so bottom of digits is at ~11 yd from near sideline,
+# i.e. y_field = 53.333 - 11 = 42.333 yd from far sideline.
+
+image: data/samples/u69_30.png
+correspondences:
+  - pixel: [210, 145]    # 30-yard line at far (top) sideline
+    field: [30.0, 0.0]
+  - pixel: [620, 138]    # 40-yard line at far sideline
+    field: [40.0, 0.0]
+  - pixel: [990, 138]    # 50-yard line at far sideline
+    field: [50.0, 0.0]
+  - pixel: [200, 575]    # 30-yard line, bottom of yard number
+    field: [30.0, 42.333]
+  - pixel: [620, 575]    # 40-yard line, bottom of yard number
+    field: [40.0, 42.333]
+  - pixel: [980, 575]    # 50-yard line, bottom of yard number
+    field: [50.0, 42.333]

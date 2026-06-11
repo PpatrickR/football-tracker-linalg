@@ -1,0 +1,23 @@
+# Field registration for data/samples/sscope_60s.png (Sport Scope endzone-camera demo).
+#
+# These correspondences are HAND-PICKED from visual inspection of the gridded
+# crops at full resolution; expect ~10-30px error per point. The absolute yard
+# line numbers (35..50) are also a guess because no painted yard numbers are
+# visible in this frame — but for the smoke test the homography math doesn't
+# care about absolute league position, only that pixel/field correspondences
+# are internally consistent.
+#
+# Future: scripts/visualize_registration.py will overlay all yard lines back
+# onto the frame; if the projected lines roughly match the painted lines on
+# the field, the pipeline works end-to-end.
+
+image: data/samples/sscope_60s.png
+correspondences:
+  - pixel: [380, 215]    # left yard line, far (top) sideline
+    field: [35.0, 0.0]
+  - pixel: [940, 220]    # right yard line, far (top) sideline
+    field: [50.0, 0.0]
+  - pixel: [1080, 605]   # right yard line, near (bottom) sideline
+    field: [50.0, 53.333]
+  - pixel: [220, 615]    # left yard line, near (bottom) sideline
+    field: [35.0, 53.333]

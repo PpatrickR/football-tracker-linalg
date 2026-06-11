@@ -1,0 +1,16 @@
+# Quick rough registration for the 1997 OSU vs Michigan ABC broadcast clip.
+# Anchor frame: data/samples/u97_30.png (30s into umich_1997_osu.mp4, 480x360).
+# These correspondences are very approximate and the YAML is only used to
+# define the field mask polygon (so line detection ignores the crowd / scoreboard).
+# Absolute yard line numbers are placeholders.
+
+image: data/samples/u97_30.png
+correspondences:
+  - pixel: [60, 90]
+    field: [30.0, 0.0]
+  - pixel: [420, 90]
+    field: [70.0, 0.0]
+  - pixel: [430, 320]
+    field: [70.0, 53.333]
+  - pixel: [50, 320]
+    field: [30.0, 53.333]
